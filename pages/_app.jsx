@@ -11,56 +11,56 @@ import { Fragment, useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 
 const Header = dynamic(() => import('../components/Header'))
-function MyApp({ Component, pageProps }) {
-  let [load,setLoad] = useState(false);
-    useEffect(() => {
-      setTimeout(() => {
-        setLoad(true);
-        document.documentElement.style = 'pointer-events: all;'
-      }, 1000)
-    }, [])
-    Router.events.on('routeChangeStart', () => {
-        setLoad(false);
-        document.documentElement.style = 'pointer-events: none;'
-    });
-    Router.events.on('routeChangeComplete', () => {
-      setTimeout(() => {
-        setLoad(true);
-        document.documentElement.style = 'pointer-events: all;'
-      }, 1000)
-    });
-    Router.events.on('routeChangeError', () => {
-      setTimeout(() => {
-        setLoad(true);
-        document.documentElement.style = 'pointer-events: all;'
-      }, 1000)
-    });
+const MyApp = ({ Component, pageProps }) => {
+  let [load, setLoad] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(true);
+      document.documentElement.style = 'pointer-events: all;'
+    }, 1000)
+  }, [])
+  Router.events.on('routeChangeStart', () => {
+    setLoad(false);
+    document.documentElement.style = 'pointer-events: none;'
+  });
+  Router.events.on('routeChangeComplete', () => {
+    setTimeout(() => {
+      setLoad(true);
+      document.documentElement.style = 'pointer-events: all;'
+    }, 1000)
+  });
+  Router.events.on('routeChangeError', () => {
+    setTimeout(() => {
+      setLoad(true);
+      document.documentElement.style = 'pointer-events: all;'
+    }, 1000)
+  });
   return (<>
     <Head>
-        <title>Umut Bayraktar</title>
-        <link rel="shortcut icon" href="https://ugc.production.linktr.ee/6RJk9s2pQZ2yAdcxw3Ir_TXX2dLlNmwM2OFdf?io=true&size=avatar-v3_0" type="image/x-icon" ></link>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+      <title>James Coulter</title>
+      <link rel="shortcut icon" href="https://ugc.production.linktr.ee/6RJk9s2pQZ2yAdcxw3Ir_TXX2dLlNmwM2OFdf?io=true&size=avatar-v3_0" type="image/x-icon" ></link>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
 
     </Head>
     <Transition
-          as={Fragment}
-          show={!load ? true : false}
-          enter="transform transition duration-[100ms]"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="transform duration-[250ms] transition ease-in-out"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-      >
-        <div style={{ zIndex: 99999 }} className="fixed bg-black/75 w-full h-screen flex justify-center items-center pointer-events-none">
-            <div className="flex items-center gap-x-6 animate-pulse">
-                <div className="text-center">
-                    <p className="text-6xl mb-5 font-semibold">Umut Bayraktar</p>
-                    <p className="uppercase text-xl font-semibold text-white"><i className="fal fa-spinner-third fa-spin" /></p>
-                </div>
-            </div>
+      as={Fragment}
+      show={!load ? true : false}
+      enter="transform transition duration-[100ms]"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transform duration-[250ms] transition ease-in-out"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+    >
+      <div style={{ zIndex: 99999 }} className="fixed bg-black/75 w-full h-screen flex justify-center items-center pointer-events-none">
+        <div className="flex items-center gap-x-6 animate-pulse">
+          <div className="text-center">
+            <p className="text-6xl mb-5 font-semibold">James Coulter</p>
+            <p className="uppercase text-xl font-semibold text-white"><i className="fal fa-spinner-third fa-spin" /></p>
+          </div>
         </div>
+      </div>
     </Transition>
     <main className="border-b-[7px] border-t-[7px] h-full border-neutral-800/50 w-full">
       <div className="min-h-screen max-w-screen-lg p-5 w-full md:w-10/12 lg:w-8/12 mx-auto transition-all duration-300">
@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps }) {
         <div className="max-w-screen-lg p-5 w-full md:w-10/12 lg:w-8/12 mx-auto transition-all duration-300">
           <div className="md:flex w-full items-center justify-between">
             <div>
-              <p>❤️ Umut Bayraktar</p></div>
+              <p>❤️ James Coulter</p></div>
             <div className="mt-2 md:mt-0 flex items-center">
               <a href="https://discord.gg/uQpVyeHVZw" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-neutral-700/5 hover:bg-neutral-700/20 px-4 py-2 rounded-md transition-all duration-200">
                 <i className="fab fa-discord mr-2" />Join My Discord
